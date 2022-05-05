@@ -12,18 +12,23 @@ elif size == "MEDIUM":
 else:
 	size_price = 15
 
-HST = 0.1805
+HST = 0.13
 delivery_cost = 11
 total = size_price + toppings * 0.50
 price_with_delivery = total + delivery_cost
+price_HST = price_with_delivery * HST
+price_with_delivery = price_with_delivery + price_HST
+total_HST = total * HST
+total = total + total_HST
+
 
 if (size == "SMALL") or (size == "MEDIUM") or (size == "LARGE"):
 	if (toppings >= 0) and (toppings <= 6):
 		if (delivery == "YES") or (delivery == "NO"):
 			if delivery == "YES":
-				print("The total is $" + str(price_with_delivery))
+				print("The total is $" + str(round(price_with_delivery, 2)))
 			else:
-				print("The total is $" + str(total))
+				print("The total is $" + str(round(total, 2)))
 		else: 
 			print("Please enter either yes or no for if you need delivery")
 	else:
