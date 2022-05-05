@@ -1,3 +1,6 @@
+# Created by Graeme Barbbe
+# Edited by Van Nguyen
+# Created on May 05 2022
 
 size = input("What size: ")
 toppings = int(input("Enter amount of toppings: "))
